@@ -34,4 +34,9 @@ public class InputView {
         }
     }
 
+    public int readNumberOfAttempt() {
+        String input = Console.readLine();
+        return Integer.parseInt(input);
+    }
+
 }
