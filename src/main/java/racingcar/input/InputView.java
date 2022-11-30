@@ -8,6 +8,8 @@ import java.util.List;
 
 public class InputView {
 
+    private final int CAR_NAME_SIZE = 5;
+
     public List<String> readCarNames() {
         String input = Console.readLine();
         checkEmpty(input);
@@ -29,14 +31,29 @@ public class InputView {
     }
 
     private void validateCarNameSize(String name) {
-        if (name.length() > 5) {
+        if (name.length() > CAR_NAME_SIZE) {
             throw new IllegalArgumentException("[ERROR] 이름은 5글자 이하만 가능합니다.");
         }
     }
 
     public int readNumberOfAttempt() {
         String input = Console.readLine();
+        checkEmpty(input);
+        validateNumber(input);
         return Integer.parseInt(input);
+    }
+
+    private void validateNumber(String input) {
+        for (int i = 0; i < input.length(); i++) {
+            checkNumber(input.charAt(i));
+        }
+    }
+
+    private void checkNumber(char digit) {
+        if (!Character.isDigit(digit)) {
+            throw new IllegalArgumentException("[ERROR] 숫자만 입력 가능합니다.");
+        }
+
     }
 
 }
