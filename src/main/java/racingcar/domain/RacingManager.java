@@ -21,4 +21,8 @@ public class RacingManager {
         }
         this.cars = list;
     }
+
+    public List<Car> getCars() {
+        return this.cars;
+    }
 }
