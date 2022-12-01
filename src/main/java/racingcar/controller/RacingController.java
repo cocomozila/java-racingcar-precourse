@@ -17,6 +17,18 @@ public class RacingController {
     }
 
     public void run() {
+        createCar();
+    }
 
+    private void createCar() {
+        outputView.displayInputCarName();
+        do {
+            try {
+                racingManager.CreateCars(inputView.readCarNames());
+                break;
+            } catch (IllegalArgumentException error) {
+                outputView.displayError(error);
+            }
+        } while (true);
     }
 }
