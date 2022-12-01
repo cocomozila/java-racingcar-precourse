@@ -12,4 +12,23 @@ public class RacingAward {
         queue.addAll(cars);
         return getWinners(queue);
     }
+
+    private List<String> getWinners(Queue<Car> cars) {
+        List<String> winners = new ArrayList<>();
+        addWinner(cars, winners);
+        return winners;
+    }
+
+    private void addWinner(Queue<Car> cars, List<String> winners) {
+        int max = 0;
+        do {
+            Car car = cars.poll();
+            if (car.getPosition() >= max) {
+                winners.add(car.getName());
+                max = car.getPosition();
+                continue;
+            }
+            return;
+        } while (!cars.isEmpty());
+    }
 }
