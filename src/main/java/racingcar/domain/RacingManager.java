@@ -35,4 +35,8 @@ public class RacingManager {
             car.move(movementMaker.getMovement());
         }
     }
+
+    public List<String> getAwardResult() {
+        return racingAward.getAwardsResults(this.cars);
+    }
 }
