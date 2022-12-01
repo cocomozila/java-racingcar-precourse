@@ -32,4 +32,21 @@ public class OutputView {
         }
         return distance.toString();
     }
+
+    public void displayWinnerList(List<String> winners) {
+        String message = "최종 우승자 : ";
+        message = makeWinner(winners, message);
+        System.out.println(message);
+    }
+
+    private String makeWinner(List<String> winners, String message) {
+        StringBuilder messageBuilder = new StringBuilder(message);
+        for (int index = 0; index < winners.size(); index++) {
+            messageBuilder.append(winners.get(index));
+            if (index < winners.size() - 1) {
+                messageBuilder.append(", ");
+            }
+        }
+        return messageBuilder.toString();
+    }
 }
