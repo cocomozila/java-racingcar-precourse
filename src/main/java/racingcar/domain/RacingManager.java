@@ -25,4 +25,14 @@ public class RacingManager {
     public List<Car> getCars() {
         return this.cars;
     }
+
+    public void racingProgress() {
+        roundProgress(this.cars);
+    }
+
+    private void roundProgress(List<Car> cars) {
+        for (Car car : cars) {
+            car.move(movementMaker.getMovement());
+        }
+    }
 }
