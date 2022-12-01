@@ -8,6 +8,10 @@ public class Car implements Comparable<Car> {
         this.name = name;
     }
 
+    public void move(MoveStatus moveStatus) {
+        this.position += moveStatus.getMove();
+    }
+
     public String getName() {
         return this.name;
     }
