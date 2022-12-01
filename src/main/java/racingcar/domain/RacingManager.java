@@ -14,4 +14,11 @@ public class RacingManager {
         this.racingAward = new RacingAward();
     }
 
+    public void CreateCars(List<String> names) {
+        List<Car> list = new ArrayList<>();
+        for (String name : names) {
+            list.add(new Car(name));
+        }
+        this.cars = list;
+    }
 }
