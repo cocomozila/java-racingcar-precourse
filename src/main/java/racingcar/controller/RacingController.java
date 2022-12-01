@@ -22,6 +22,7 @@ public class RacingController {
     public void run() {
         createCar();
         startRacing();
+        finishRacing();
     }
 
     private void createCar() {
@@ -55,5 +56,10 @@ public class RacingController {
             List<Car> cars = racingManager.getCars();
             outputView.displayRacing(cars);
         }
+    }
+
+    private void finishRacing() {
+        List<String> winners = racingManager.getAwardResult();
+        outputView.displayWinnerList(winners);
     }
 }
