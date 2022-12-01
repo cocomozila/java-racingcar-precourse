@@ -1,5 +1,9 @@
 package racingcar.input;
 
+import racingcar.domain.Car;
+
+import java.util.List;
+
 public class OutputView {
 
     public void displayInputCarName() {
@@ -12,5 +16,20 @@ public class OutputView {
 
     public void displayExecutionResult() {
         System.out.println("\n실행 결과");
+    }
+
+    public void displayRacing(List<Car> cars) {
+        for (Car car : cars) {
+            System.out.println(car.getName()+ " : " + displayDistance(car));
+        }
+        System.out.println();
+    }
+
+    private String displayDistance(Car car) {
+        StringBuilder distance = new StringBuilder();
+        for (int index = 0; index < car.getPosition(); index++) {
+            distance.append("-");
+        }
+        return distance.toString();
     }
 }
